@@ -25,9 +25,6 @@ window/stretch/mode="viewport"
 
 project/assembly_name="Aggroculture"
 
-[editor]
-
-
 [input]
 
 up={

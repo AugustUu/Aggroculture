@@ -81,7 +81,7 @@ public partial class movement : CharacterBody3D
 			playerRotation = Mathf.Atan2(player_pos.Y - mouse_pos.Y, mouse_pos.X - player_pos.X) - Mathf.Pi / 2; // this shit is fucked dont change
 		}else{
 			if (direction != Vector3.Zero){
-				playerRotation = new Vector2(velocity.Z,velocity.X).Angle();
+				playerRotation = new Vector2(velocity.X,velocity.Z).Angle() + Mathf.Pi/2;
 			}
 		}
 

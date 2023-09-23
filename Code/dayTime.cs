@@ -33,8 +33,9 @@ public partial class dayTime : Timer
 
 
 	public override void _Process(double delta){
-		Vector3 rotation = sun.Rotation; 
-		rotation.X = (float)(((hours* 60 + minutes) / 1440.0) * 2*Math.PI) ;
+		Vector3 rotation = sun.Rotation;
+		rotation.X = (float)Mathf.LerpAngle(rotation.X,(float)((hours* 60 + minutes) / 1440.0 * 2*Math.PI),delta);
+		
 		sun.Rotation = rotation;
 	}
 
@@ -55,7 +56,11 @@ public partial class dayTime : Timer
 		//setting labels to show coresponding data.
 		Label onScreenTime = GetNode<Label>("Time");
 		Label onScreenDays = GetNode<Label>("Days");
-		onScreenTime.Text = hours.ToString()+" : "+minutes.ToString();
+		if(minutes >= 10){
+			onScreenTime.Text = hours.ToString()+" : "+minutes.ToString();
+		}else{
+			onScreenTime.Text = hours.ToString()+" : 0"+minutes.ToString();
+		}
 		onScreenDays.Text = "Day "+days;
 	}
 }
