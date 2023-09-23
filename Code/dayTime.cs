@@ -29,16 +29,19 @@ public partial class dayTime : Timer
 		minutes += 5;
 		recalculate_time();
 
+	}
 
+
+	public override void _Process(double delta){
+		Vector3 rotation = sun.Rotation; 
+		rotation.X = (float)(((hours* 60 + minutes) / 1440.0) * 2*Math.PI) ;
+		sun.Rotation = rotation;
 	}
 
 	//Changes from raw int time into hours, mins, days.
 	public void recalculate_time(){
 
 
-		Vector3 rotation = sun.Rotation; 
-		rotation.X = (float)(((hours* 60 + minutes) / 1440.0) * 2*Math.PI);
-		sun.Rotation = rotation;
 
 		if(minutes >= 60){
 			minutes -= 60;
