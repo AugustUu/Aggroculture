@@ -86,6 +86,7 @@ public partial class movement : CharacterBody3D
 				playerRotation = new Vector2(velocity.Z,velocity.X).Angle();
 			}
 		}
+		
 
 
 		Vector3 rotation = model.Rotation;
