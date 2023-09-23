@@ -15,9 +15,9 @@ public partial class movement : CharacterBody3D
 	[Export]
 	public Camera3D camera { get; set; }
 
-    public override void _Ready(){
-        Input.MouseMode = Input.MouseModeEnum.Visible;
-    }
+	public override void _Ready(){
+		Input.MouseMode = Input.MouseModeEnum.Visible;
+	}
 
 	public void Rotate(){
 		/*
@@ -79,7 +79,7 @@ public partial class movement : CharacterBody3D
 		}
 
 
-		Rotate();
+		//Rotate();
 	
 
 		
