@@ -78,7 +78,8 @@ public partial class movement : CharacterBody3D
 		if(Input.IsActionPressed("ADS")){
 			Vector2 player_pos = camera.UnprojectPosition(Position);
 			Vector2 mouse_pos = GetViewport().GetMousePosition();
-
+			velocity.X = velocity.X/2;
+			velocity.Z =velocity.Z/2;
 			playerRotation = this.Rotation.Y + Mathf.Atan2(player_pos.Y - mouse_pos.Y, mouse_pos.X - player_pos.X) + Mathf.Pi / 2; // this shit is fucked dont change
 
 		}else{
