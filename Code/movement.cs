@@ -79,8 +79,9 @@ public partial class movement : CharacterBody3D
 			velocity.Z = Mathf.MoveToward(Velocity.Z, 0, Speed);
 		}
 
-
-		Rotate();
+		if(Input.IsActionPressed("ADS")){
+			Rotate();
+		}
 
 
 
