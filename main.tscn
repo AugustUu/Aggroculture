@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://rykra52daxp0"]
 
 [ext_resource type="PackedScene" uid="uid://bmy8kyut5tyc1" path="res://player.tscn" id="1_jbw82"]
-[ext_resource type="PackedScene" uid="uid://ctqauwaeyxkgb" path="res://world.tscn" id="2_ap4xl"]
+[ext_resource type="PackedScene" uid="uid://dk1aqkpowwjyb" path="res://world.tscn" id="2_ap4xl"]
 [ext_resource type="Script" path="res://dayTime.cs" id="3_bhxnw"]
 
 [node name="Main" type="Node3D"]

@@ -4,10 +4,6 @@ using System.ComponentModel;
 
 public partial class dayTime : Timer
 {
-
-
-
-
 	int minutes;
 	int hours = 0;
 
@@ -16,6 +12,7 @@ public partial class dayTime : Timer
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		recalculate_time();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -42,20 +39,8 @@ public partial class dayTime : Timer
 
 		Label onScreenTime = GetNode<Label>("Time");
 		Label onScreenDays = GetNode<Label>("Days");
-		if(hours == 0 && minutes < 10){
-			onScreenTime.Text = "12 : 0"+minutes.ToString();
-		}
-		else if(hours == 0){
-			onScreenTime.Text = "12 : "+minutes.ToString();
-		}
-		else if(minutes < 10){
-			onScreenTime.Text = hours.ToString()+" : 0"+minutes.ToString();
-		}
-		else{
-			onScreenTime.Text = hours.ToString()+" : "+minutes.ToString();
-		}
+		onScreenTime.Text = hours.ToString()+" : "+minutes.ToString();
 
 		onScreenDays.Text = "Day "+days;
-
 	}
 }
