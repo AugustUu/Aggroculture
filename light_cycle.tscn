@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://cs5q28qbhf5sl"]
+
+[ext_resource type="Script" path="res://dayTime.cs" id="1_lj0yo"]
+
+[sub_resource type="Gradient" id="Gradient_ccplx"]
+colors = PackedColorArray(0.0745098, 0.0588235, 0.360784, 1, 0.00392157, 0.00392157, 0.00784314, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2r0rr"]
+gradient = SubResource("Gradient_ccplx")
+fill_from = Vector2(1, 0.659341)
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_74l8r"]
+ground_color = Color(0.101961, 0.0705882, 0.0352941, 1)
+night_sky = SubResource("GradientTexture2D_2r0rr")
+
+[sub_resource type="Sky" id="Sky_f6l3f"]
+sky_material = SubResource("PhysicalSkyMaterial_74l8r")
+
+[sub_resource type="Environment" id="Environment_1hj64"]
+background_mode = 2
+sky = SubResource("Sky_f6l3f")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kmyx7"]
+transparency = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_s6p6g"]
+material = SubResource("StandardMaterial3D_kmyx7")
+top_radius = 0.0
+bottom_radius = 0.0
+height = 0.001
+rings = 1
+
+[node name="LightCycle" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1hj64")
+
+[node name="TimeDay Counter" type="Timer" parent="."]
+autostart = true
+script = ExtResource("1_lj0yo")
+
+[node name="Dial" type="MeshInstance3D" parent="TimeDay Counter"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, -23.7568, 0)
+mesh = SubResource("CylinderMesh_s6p6g")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="TimeDay Counter/Dial"]
+transform = Transform3D(-4.37114e-08, -4.37114e-08, -1, -4.37114e-08, 1, -4.37114e-08, 1, 4.37114e-08, -4.37114e-08, -1787.05, -7.81146e-05, 0)
+shadow_enabled = true
+
+[node name="Time" type="Label" parent="TimeDay Counter"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 43.0
+
+[node name="Days" type="Label" parent="TimeDay Counter"]
+offset_left = 20.0
+offset_top = 50.0
+offset_right = 60.0
+offset_bottom = 73.0
+
+[connection signal="timeout" from="TimeDay Counter" to="TimeDay Counter" method="_on_timeout"]
