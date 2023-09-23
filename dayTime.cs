@@ -4,14 +4,14 @@ using System.ComponentModel;
 
 public partial class dayTime : Timer
 {
-	public static int minutes_In_Day = 600;
-	public static int minutes_In_Hour = 60;
-	public static double tRMD = (2 * 3.1419) / minutes_In_Day;
 
-	double time = 0.0;
-	int pastMin = -1;
-	int startHour = 12;
-	double Ingame_Speed = 2.4;
+
+
+
+	int minutes;
+	int hours = 0;
+
+	int days = 0;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -19,23 +19,27 @@ public partial class dayTime : Timer
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+
+	private void  _on_timeout()
 	{
-		time += delta * tRMD * Ingame_Speed;
+		minutes += 5;
 		recalculate_time();
-		
-	}
-	private void _on_timeout()
-	{
 	}
 
 
 	public void recalculate_time(){
-		int total_min = (int)(time/tRMD);
-		int day = (int)(total_min/minutes_In_Day);
-		int current_day_minutes = total_min % minutes_In_Day;
-		int hours = (int)(current_day_minutes/minutes_In_Hour);
-		int minutes = (int)(current_day_minutes % minutes_In_Hour);
+		if(minutes >= 60){
+			minutes -= 60;
+			hours += 1;
+		}
+
+		if(hours >= 24){
+			hours = 0;
+			days += 1;
+		}
+
+
+
 		Label onScreenTime = GetNode<Label>("Time");
 		Label onScreenDays = GetNode<Label>("Days");
 		if(hours == 0 && minutes < 10){
@@ -51,9 +55,7 @@ public partial class dayTime : Timer
 			onScreenTime.Text = hours.ToString()+" : "+minutes.ToString();
 		}
 
-		onScreenDays.Text = "Day "+day;
-		if(pastMin != minutes){
-			pastMin = minutes;
-		}
+		onScreenDays.Text = "Day "+days;
+
 	}
 }
