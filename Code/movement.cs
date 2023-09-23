@@ -41,6 +41,36 @@ public partial class movement : CharacterBody3D
 	GD.Print(res);
 	*/
 
+	public void Rotate(Vector3 velocity){
+		if(Input.IsActionPressed("ADS")){
+			Vector2 player_pos = camera.UnprojectPosition(Position);
+			Vector2 mouse_pos = GetViewport().GetMousePosition();
+
+			playerRotation = this.Rotation.Y + Mathf.Atan2(player_pos.Y - mouse_pos.Y, mouse_pos.X - player_pos.X) + Mathf.Pi / 2; // this shit is fucked dont change
+
+		}else{
+			if (velocity != Vector3.Zero){
+				playerRotation =  new Vector2(-velocity.X,velocity.Z).Angle() - Mathf.Pi/2;
+			}
+		}
+
+		Vector2 mouse_position = GetViewport().GetMousePosition() - GetViewport().GetVisibleRect().Size/2;
+
+		if(Input.IsActionJustPressed("drag")){
+			mouseStart = mouse_position.X;
+		}else if(Input.IsActionPressed("drag") && mouseStart != mouse_position.X){
+			Vector3 rot = this.Rotation;
+			float mouse = (mouse_position.X - mouseStart)/100;
+
+			rot.Y -= mouse;
+			this.Rotation = rot;
+			mouseStart = mouse_position.X;
+		}
+
+		Vector3 rotation = model.GlobalRotation;
+		rotation.Y = (float)Mathf.LerpAngle(rotation.Y,playerRotation,0.2);
+		model.GlobalRotation = rotation;
+	}
 	
 	public override void _PhysicsProcess(double delta)
 	{
@@ -75,36 +105,7 @@ public partial class movement : CharacterBody3D
 			velocity.Z = Mathf.MoveToward(Velocity.Z, 0, Speed);
 		}
 
-		if(Input.IsActionPressed("ADS")){
-			Vector2 player_pos = camera.UnprojectPosition(Position);
-			Vector2 mouse_pos = GetViewport().GetMousePosition();
-
-			playerRotation = this.Rotation.Y + Mathf.Atan2(player_pos.Y - mouse_pos.Y, mouse_pos.X - player_pos.X) + Mathf.Pi / 2; // this shit is fucked dont change
-
-		}else{
-			if (direction != Vector3.Zero){
-				playerRotation = new Vector2(-velocity.X,velocity.Z).Angle() - Mathf.Pi/2;
-			}
-		}
-
-		Vector2 mouse_position = GetViewport().GetMousePosition() - GetViewport().GetVisibleRect().Size/2;
-
-
-		if(Input.IsActionJustPressed("drag")){
-			mouseStart = mouse_position.X;
-		}else if(Input.IsActionPressed("drag") && mouseStart != mouse_position.X){
-			Vector3 rot = this.Rotation;
-			float mouse = (mouse_position.X - mouseStart)/100;
-			GD.Print(mouse);
-			rot.Y -= mouse;
-			this.Rotation = rot;
-			mouseStart = mouse_position.X;
-		}
-
-		Vector3 rotation = model.GlobalRotation;
-		rotation.Y = (float)Mathf.LerpAngle(rotation.Y,playerRotation,0.2);
-		model.GlobalRotation = rotation;
-
+		Rotate(velocity);
 
 		Velocity = velocity;
 		MoveAndSlide();
