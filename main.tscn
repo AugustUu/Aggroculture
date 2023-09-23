@@ -13,6 +13,7 @@ camera = NodePath("Camera3D")
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.415805, 0.909454, 0, -0.909454, 0.415805, 0, 6.54869, 2.88836)
 fov = 100.0
+size = 10.0
 
 [node name="World" parent="." instance=ExtResource("2_ap4xl")]
 
