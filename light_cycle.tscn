@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://clv0fpjyjqnwe"]
 
-[ext_resource type="Script" path="res://dayTime.cs" id="1_lj0yo"]
+[ext_resource type="Script" path="res://Code/dayTime.cs" id="1_w6wi8"]
 
 [sub_resource type="Gradient" id="Gradient_ccplx"]
 colors = PackedColorArray(0.0745098, 0.0588235, 0.360784, 1, 0.00392157, 0.00392157, 0.00784314, 1)
@@ -27,7 +27,7 @@ environment = SubResource("Environment_1hj64")
 
 [node name="TimeDay Counter" type="Timer" parent="." node_paths=PackedStringArray("sun")]
 autostart = true
-script = ExtResource("1_lj0yo")
+script = ExtResource("1_w6wi8")
 hours = 10
 sun = NodePath("SunHolder")
 

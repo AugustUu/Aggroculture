@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c4udm0infxvf"
-path.s3tc="res://.godot/imported/test_Material Base Color.png-895198a4917dbe4dc94a16e168a54bdc.s3tc.ctex"
+path.s3tc="res://.godot/imported/test_Material Base Color.png-dc7db725b10bf272726bea1eb04bc2b7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://test_Material Base Color.png"
-dest_files=["res://.godot/imported/test_Material Base Color.png-895198a4917dbe4dc94a16e168a54bdc.s3tc.ctex"]
+source_file="res://Assets/DebugTree/test_Material Base Color.png"
+dest_files=["res://.godot/imported/test_Material Base Color.png-dc7db725b10bf272726bea1eb04bc2b7.s3tc.ctex"]
 
 [params]
 

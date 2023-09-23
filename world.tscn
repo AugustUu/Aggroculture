@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://ctqauwaeyxkgb"]
 
-[ext_resource type="PackedScene" uid="uid://47ip2xbed338" path="res://test.glb" id="1_cnhyw"]
+[ext_resource type="PackedScene" uid="uid://47ip2xbed338" path="res://Assets/DebugTree/test.glb" id="1_cnhyw"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_r546c"]
 

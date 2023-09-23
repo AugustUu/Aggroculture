@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmy8kyut5tyc1"]
 
-[ext_resource type="Script" path="res://movement.cs" id="1_kpbel"]
+[ext_resource type="Script" path="res://Code/movement.cs" id="1_kpbel"]
 
 [sub_resource type="TextMesh" id="TextMesh_rrpic"]
 text = "YO"
