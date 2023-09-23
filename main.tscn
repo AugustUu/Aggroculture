@@ -8,12 +8,12 @@
 
 [node name="Player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("1_jbw82")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.47477, 0)
-camera = NodePath("../Camera3D")
+camera = NodePath("Camera3D")
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 0.415805, 0.909454, 0, -0.909454, 0.415805, 0, 6.54869, 2.88836)
+fov = 100.0
 
 [node name="World" parent="." instance=ExtResource("2_ap4xl")]
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5.88951, 0)
-fov = 100.0
 
 [node name="LightCycle" parent="." instance=ExtResource("3_y2xl1")]
