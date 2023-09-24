@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhc1iwiv6ahw5"]
+
+[ext_resource type="Script" path="res://Code/label.cs" id="1_vcohh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qcg2j"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jjdmc"]
+
+[node name="storage" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="." node_paths=PackedStringArray("tempUI")]
+transform = Transform3D(131.075, 0, 0, 0, 131.075, 0, 0, 0, 131.075, -3.94738, 1.18835, -3.86252)
+script = ExtResource("1_vcohh")
+tempUI = NodePath("Label")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(-0.015, 0, 0, 0, -0.015, 0, 0, 0, -0.015, 0, 0, 0)
+shape = SubResource("BoxShape3D_qcg2j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+transform = Transform3D(0.008, 0, 0, 0, 0.008, 0, 0, 0, 0.008, -8.51452e-05, 0.000188355, 7.14194e-05)
+mesh = SubResource("BoxMesh_jjdmc")
+
+[node name="Label" type="Label" parent="Area3D"]
+offset_left = 336.0
+offset_top = 283.5
+offset_right = 376.0
+offset_bottom = 306.5
+text = "[ F ]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]
