@@ -15,7 +15,7 @@ public partial class movement : CharacterBody3D
 	public float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
 
 	[Export]
-	public Camera3D camera { get; set; }
+	public Camera3D camera;
 
 	[Export]
 	public MeshInstance3D model;
