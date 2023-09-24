@@ -26,7 +26,6 @@ sky = SubResource("Sky_f6l3f")
 environment = SubResource("Environment_1hj64")
 
 [node name="TimeDay Counter" type="Timer" parent="." node_paths=PackedStringArray("sun")]
-wait_time = 0.2
 autostart = true
 script = ExtResource("1_w6wi8")
 hours = 10
