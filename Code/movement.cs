@@ -95,8 +95,8 @@ public partial class movement : CharacterBody3D
 		Vector2 inputDir = Input.GetVector("left", "right", "up", "down");
 		Vector3 direction = (Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
 		if(direction != Vector3.Zero && Input.IsActionPressed("sprint") && Input.IsActionPressed("ADS")){
-			velocity.X = direction.X * Speed*0.666f;
-			velocity.Z = direction.Z * Speed*0.666f;
+			velocity.X = direction.X * Speed*2*0.666f;
+			velocity.Z = direction.Z * Speed*2*0.666f;
 
 		}else if(direction != Vector3.Zero && Input.IsActionPressed("sprint"))
 		{
