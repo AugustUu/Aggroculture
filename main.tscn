@@ -1,9 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://rykra52daxp0"]
+[gd_scene load_steps=8 format=3 uid="uid://dwcmh42tlyclw"]
 
 [ext_resource type="PackedScene" uid="uid://bmy8kyut5tyc1" path="res://player.tscn" id="1_jbw82"]
 [ext_resource type="PackedScene" uid="uid://ctqauwaeyxkgb" path="res://world.tscn" id="2_ap4xl"]
 [ext_resource type="Script" path="res://Code/Zoom.cs" id="2_y83xq"]
+[ext_resource type="Shader" path="res://Shader/main.gdshader" id="3_1tmfq"]
 [ext_resource type="PackedScene" uid="uid://clv0fpjyjqnwe" path="res://light_cycle.tscn" id="3_y2xl1"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_m1e80"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8byga"]
+render_priority = 0
+shader = ExtResource("3_1tmfq")
+shader_parameter/disable_shader = false
+shader_parameter/MAX_DEPTH = 1000.0
+shader_parameter/shadows_enabled = false
+shader_parameter/highlights_enabled = true
+shader_parameter/shadow_strength = 0.0
+shader_parameter/highlight_strength = 0.05
+shader_parameter/highlight_color = Color(0.45098, 0.45098, 0.45098, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/pixelSize = 3
 
 [node name="Main" type="Node3D"]
 
@@ -16,6 +34,12 @@ transform = Transform3D(1, 0, 0, 0, 0.422618, 0.906308, 0, -0.906308, 0.422618, 
 fov = 90.0
 size = 10.0
 script = ExtResource("2_y83xq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.998801, 0.0489719, 0, -0.0489719, 0.998801, 0, 0.175513, -1.09069)
+mesh = SubResource("QuadMesh_m1e80")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("ShaderMaterial_8byga")
 
 [node name="World" parent="." instance=ExtResource("2_ap4xl")]
 
