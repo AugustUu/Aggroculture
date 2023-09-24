@@ -6,7 +6,7 @@ using System.Threading;
 public partial class movement : CharacterBody3D
 {
 
-	public const float Speed = 5.0f;
+	public const float Speed = 2.5f;
 	public const float JumpVelocity = 4.5f;
 
 	public float playerRotation = 0;
@@ -45,7 +45,8 @@ public partial class movement : CharacterBody3D
 		if(Input.IsActionPressed("ADS")){
 			Vector2 player_pos = camera.UnprojectPosition(Position);
 			Vector2 mouse_pos = GetViewport().GetMousePosition();
-
+			velocity.X = velocity.X*0.666f;
+			velocity.Z = velocity.Z*0.666f;
 			playerRotation = this.Rotation.Y + Mathf.Atan2(player_pos.Y - mouse_pos.Y, mouse_pos.X - player_pos.X) + Mathf.Pi / 2; // this shit is fucked dont change
 
 		}else{
@@ -93,7 +94,15 @@ public partial class movement : CharacterBody3D
 		// As good practice, you should replace UI actions with custom gameplay actions.
 		Vector2 inputDir = Input.GetVector("left", "right", "up", "down");
 		Vector3 direction = (Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
-		if (direction != Vector3.Zero)
+		if(direction != Vector3.Zero && Input.IsActionPressed("sprint") && Input.IsActionPressed("ADS")){
+			velocity.X = direction.X * Speed*0.666f;
+			velocity.Z = direction.Z * Speed*0.666f;
+
+		}else if(direction != Vector3.Zero && Input.IsActionPressed("sprint"))
+		{
+			velocity.X = direction.X * Speed*2f;
+			velocity.Z = direction.Z * Speed*2f;
+		}else if (direction != Vector3.Zero)
 		{
 			velocity.X = direction.X * Speed;
 			velocity.Z = direction.Z * Speed;
