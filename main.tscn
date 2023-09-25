@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=11 format=3 uid="uid://dwcmh42tlyclw"]
+=======
+[gd_scene load_steps=12 format=3 uid="uid://rykra52daxp0"]
+>>>>>>> e6a30b347388785f6d4d3f3854b31978f01145fd
 
 [ext_resource type="PackedScene" uid="uid://bmy8kyut5tyc1" path="res://player.tscn" id="1_jbw82"]
 [ext_resource type="Shader" path="res://Shader/colorLimiter.gdshader" id="1_mpn0j"]
@@ -63,7 +67,12 @@ shader = ExtResource("3_qnmdo")
 
 [node name="Main" type="Node3D"]
 
+<<<<<<< HEAD
 [node name="ColorLimiter" type="Sprite2D" parent="."]
+=======
+[node name="Icon" type="Sprite2D" parent="."]
+visible = false
+>>>>>>> e6a30b347388785f6d4d3f3854b31978f01145fd
 material = SubResource("ShaderMaterial_i80ga")
 position = Vector2(1012, 558)
 scale = Vector2(17.8984, 10.3281)
