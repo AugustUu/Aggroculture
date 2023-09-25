@@ -1,10 +1,60 @@
-[gd_scene load_steps=8 format=3 uid="uid://dwcmh42tlyclw"]
+[gd_scene load_steps=12 format=3 uid="uid://dwcmh42tlyclw"]
 
 [ext_resource type="PackedScene" uid="uid://bmy8kyut5tyc1" path="res://player.tscn" id="1_jbw82"]
+[ext_resource type="Shader" path="res://Shader/colorLimiter.gdshader" id="1_mpn0j"]
 [ext_resource type="PackedScene" uid="uid://ctqauwaeyxkgb" path="res://world.tscn" id="2_ap4xl"]
 [ext_resource type="Script" path="res://Code/Zoom.cs" id="2_y83xq"]
 [ext_resource type="Shader" path="res://Shader/pixelate.gdshader" id="3_qnmdo"]
 [ext_resource type="PackedScene" uid="uid://clv0fpjyjqnwe" path="res://light_cycle.tscn" id="3_y2xl1"]
+[ext_resource type="PackedScene" uid="uid://47ip2xbed338" path="res://Assets/DebugTree/test.glb" id="6_pgdrk"]
+[ext_resource type="Texture2D" uid="uid://cvdimgxi2s38w" path="res://Assets/icon.svg" id="7_77xwn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i80ga"]
+shader = ExtResource("1_mpn0j")
+shader_parameter/color_3 = Vector4(31, 51, 64, 1)
+shader_parameter/color_4 = Vector4(69, 97, 109, 1)
+shader_parameter/color_5 = Vector4(121, 134, 138, 1)
+shader_parameter/color_6 = Vector4(185, 186, 180, 1)
+shader_parameter/color_7 = Vector4(225, 221, 212, 1)
+shader_parameter/color_8 = Vector4(245, 241, 230, 1)
+shader_parameter/color_9 = Vector4(251, 249, 245, 1)
+shader_parameter/color_10 = Vector4(0, 39, 65, 1)
+shader_parameter/color_11 = Vector4(0, 63, 80, 1)
+shader_parameter/color_12 = Vector4(0, 94, 98, 1)
+shader_parameter/color_13 = Vector4(0, 130, 110, 1)
+shader_parameter/color_14 = Vector4(0, 166, 114, 1)
+shader_parameter/color_15 = Vector4(106, 186, 107, 1)
+shader_parameter/color_16 = Vector4(181, 213, 161, 1)
+shader_parameter/color_17 = Vector4(232, 230, 208, 1)
+shader_parameter/color_18 = Vector4(12, 56, 88, 1)
+shader_parameter/color_19 = Vector4(30, 84, 127, 1)
+shader_parameter/color_20 = Vector4(26, 114, 173, 1)
+shader_parameter/color_21 = Vector4(19, 145, 204, 1)
+shader_parameter/color_22 = Vector4(58, 175, 233, 1)
+shader_parameter/color_23 = Vector4(145, 213, 245, 1)
+shader_parameter/color_24 = Vector4(213, 235, 238, 1)
+shader_parameter/color_25 = Vector4(54, 49, 89, 1)
+shader_parameter/color_26 = Vector4(94, 70, 116, 1)
+shader_parameter/color_27 = Vector4(141, 84, 147, 1)
+shader_parameter/color_28 = Vector4(189, 102, 168, 1)
+shader_parameter/color_29 = Vector4(228, 128, 188, 1)
+shader_parameter/color_30 = Vector4(246, 179, 213, 1)
+shader_parameter/color_31 = Vector4(66, 49, 68, 1)
+shader_parameter/color_32 = Vector4(110, 62, 77, 1)
+shader_parameter/color_33 = Vector4(163, 77, 90, 1)
+shader_parameter/color_34 = Vector4(211, 93, 103, 1)
+shader_parameter/color_35 = Vector4(237, 126, 130, 1)
+shader_parameter/color_36 = Vector4(254, 181, 178, 1)
+shader_parameter/color_37 = Vector4(245, 220, 219, 1)
+shader_parameter/color_38 = Vector4(26, 16, 19, 1)
+shader_parameter/color_39 = Vector4(47, 29, 30, 1)
+shader_parameter/color_40 = Vector4(73, 48, 43, 1)
+shader_parameter/color_41 = Vector4(111, 64, 51, 1)
+shader_parameter/color_42 = Vector4(157, 90, 60, 1)
+shader_parameter/color_43 = Vector4(206, 121, 68, 1)
+shader_parameter/color_44 = Vector4(228, 153, 79, 1)
+shader_parameter/color_45 = Vector4(250, 198, 129, 1)
+shader_parameter/color_46 = Vector4(252, 226, 186, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_h1on1"]
 
@@ -13,6 +63,12 @@ render_priority = 0
 shader = ExtResource("3_qnmdo")
 
 [node name="Main" type="Node3D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_i80ga")
+position = Vector2(1012, 558)
+scale = Vector2(17.8984, 10.3281)
+texture = ExtResource("7_77xwn")
 
 [node name="Player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("1_jbw82")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.47477, 0)
@@ -29,6 +85,11 @@ transform = Transform3D(2.495, 0, 0, 0, -0.0711012, -2.49399, 0, 2.49399, -0.071
 mesh = SubResource("PlaneMesh_h1on1")
 surface_material_override/0 = SubResource("ShaderMaterial_pmr64")
 
+[node name="LightCycle" parent="." instance=ExtResource("3_y2xl1")]
+
 [node name="World" parent="." instance=ExtResource("2_ap4xl")]
 
-[node name="LightCycle" parent="." instance=ExtResource("3_y2xl1")]
+[node name="test" parent="." instance=ExtResource("6_pgdrk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.873746, 0.526036, 2.98237)
+
+[editable path="test"]

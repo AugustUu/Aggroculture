@@ -1,6 +1,6 @@
 shader_type spatial;
 render_mode unshaded;
-// render_mode diffuse_toon; // simple toon shader works, but looks too flat to my liking. need further work to improve
+render_mode diffuse_toon; // simple toon shader works, but looks too flat to my liking. need further work to improve
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_nearest;
 
 //resolution must be divisible by pixel_size
