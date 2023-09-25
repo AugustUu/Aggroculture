@@ -61,7 +61,7 @@ public partial class movement : CharacterBody3D
 			mouseStart = mouse_position.X;
 		}else if(Input.IsActionPressed("drag") && mouseStart != mouse_position.X){
 			Vector3 rot = this.Rotation;
-			float mouse = (mouse_position.X - mouseStart)/100;
+			float mouse = (mouse_position.X - mouseStart)/300;
 
 			rot.Y -= mouse;
 			this.Rotation = rot;
