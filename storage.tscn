@@ -22,10 +22,10 @@ transform = Transform3D(0.008, 0, 0, 0, 0.008, 0, 0, 0, 0.008, -8.51452e-05, 0.0
 mesh = SubResource("BoxMesh_jjdmc")
 
 [node name="Label" type="Label" parent="Area3D"]
-offset_left = 336.0
-offset_top = 283.5
-offset_right = 376.0
-offset_bottom = 306.5
+offset_left = 960.0
+offset_top = 648.0
+offset_right = 1000.0
+offset_bottom = 674.0
 text = "[ F ]"
 horizontal_alignment = 1
 vertical_alignment = 1
