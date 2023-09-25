@@ -52,6 +52,6 @@ shadow_enabled = true
 
 [node name="Moon" type="DirectionalLight3D" parent="TimeDay Counter/SunHolder"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 505.248, 0)
-light_color = Color(0.207843, 0.25098, 0.282353, 1)
+light_color = Color(0.145098, 0.0470588, 0.207843, 1)
 
 [connection signal="timeout" from="TimeDay Counter" to="TimeDay Counter" method="_on_timeout"]

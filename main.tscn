@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dwcmh42tlyclw"]
+[gd_scene load_steps=11 format=3 uid="uid://dwcmh42tlyclw"]
 
 [ext_resource type="PackedScene" uid="uid://bmy8kyut5tyc1" path="res://player.tscn" id="1_jbw82"]
 [ext_resource type="Shader" path="res://Shader/colorLimiter.gdshader" id="1_mpn0j"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://Code/Zoom.cs" id="2_y83xq"]
 [ext_resource type="Shader" path="res://Shader/pixelate.gdshader" id="3_qnmdo"]
 [ext_resource type="PackedScene" uid="uid://clv0fpjyjqnwe" path="res://light_cycle.tscn" id="3_y2xl1"]
-[ext_resource type="PackedScene" uid="uid://47ip2xbed338" path="res://Assets/DebugTree/test.glb" id="6_pgdrk"]
 [ext_resource type="Texture2D" uid="uid://cvdimgxi2s38w" path="res://Assets/icon.svg" id="7_77xwn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i80ga"]
@@ -64,7 +63,7 @@ shader = ExtResource("3_qnmdo")
 
 [node name="Main" type="Node3D"]
 
-[node name="Icon" type="Sprite2D" parent="."]
+[node name="ColorLimiter" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_i80ga")
 position = Vector2(1012, 558)
 scale = Vector2(17.8984, 10.3281)
@@ -88,8 +87,3 @@ surface_material_override/0 = SubResource("ShaderMaterial_pmr64")
 [node name="LightCycle" parent="." instance=ExtResource("3_y2xl1")]
 
 [node name="World" parent="." instance=ExtResource("2_ap4xl")]
-
-[node name="test" parent="." instance=ExtResource("6_pgdrk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.873746, 0.526036, 2.98237)
-
-[editable path="test"]
