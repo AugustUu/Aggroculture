@@ -8,7 +8,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8s3y4"]
 diffuse_mode = 3
 specular_mode = 1
-albedo_color = Color(0, 0.701961, 0, 1)
+albedo_color = Color(0.305882, 0.584314, 0.92549, 1)
 metallic_specular = 0.0
 roughness = 0.0
 
