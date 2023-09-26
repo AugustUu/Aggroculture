@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqpiknc4llpfk"]
+[gd_scene load_steps=5 format=3 uid="uid://bqpiknc4llpfk"]
 
 [ext_resource type="Texture2D" uid="uid://b1svi6j1gytyk" path="res://Assets/UI/singleslot2.png" id="1_8epcp"]
+[ext_resource type="FontFile" uid="uid://bv4aus15hgsj5" path="res://Assets/UI/Seven Segment.ttf" id="2_rloee"]
+[ext_resource type="Script" path="res://Assets/UI/clock.cs" id="3_nevi7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dedgu"]
+font = ExtResource("2_rloee")
+font_size = 30
+font_color = Color(0.501961, 0.501961, 0.501961, 1)
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -15,12 +24,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
@@ -28,52 +34,31 @@ layout_mode = 2
 size_flags_vertical = 8
 
 [node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
-scale = Vector2(3, 3)
+position = Vector2(96, 0)
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("1_8epcp")
 
 [node name="Sprite2D2" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
-position = Vector2(54, 0)
-scale = Vector2(3, 3)
+position = Vector2(144, 0)
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("1_8epcp")
 
 [node name="Sprite2D3" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
-position = Vector2(108, 0)
-scale = Vector2(3, 3)
+position = Vector2(192, 0)
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("1_8epcp")
 
-[node name="MarginContainer2" type="MarginContainer" parent="."]
+[node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -56.0
-offset_right = 43.0
-offset_bottom = -30.0
+offset_top = -49.0
+offset_right = 76.0
+offset_bottom = -14.0
 grow_vertical = 0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2"]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="Label" type="Label" parent="MarginContainer2/HBoxContainer"]
-layout_mode = 2
-text = "Day 1"
-
-[node name="MarginContainer3" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -34.0
-offset_right = 50.0
-offset_bottom = -8.0
-grow_vertical = 0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer3"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-
-[node name="Label" type="Label" parent="MarginContainer3/HBoxContainer"]
-layout_mode = 2
 text = "12 : 01"
+label_settings = SubResource("LabelSettings_dedgu")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_nevi7")
