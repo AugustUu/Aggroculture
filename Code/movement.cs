@@ -6,7 +6,7 @@ using System.Threading;
 public partial class movement : CharacterBody3D
 {
 
-	public const float Speed = 2.5f;
+	public const float Speed = 3f;
 	public const float JumpVelocity = 4.5f;
 
 	public float playerRotation = 0;
@@ -20,12 +20,15 @@ public partial class movement : CharacterBody3D
 	[Export]
 	public MeshInstance3D model;
 
+	[Export]
+	public int sensitivity = 300;
+
 	public override void _Ready()
 	{
 		Input.MouseMode = Input.MouseModeEnum.Visible;
 	}
 
-	float mouseStart = 0;
+	float mouse_start = 0;
 
 	/*
 
@@ -43,37 +46,35 @@ public partial class movement : CharacterBody3D
 
 	public void Rotate(Vector3 velocity){
 		SpotLight3D light = GetNode<SpotLight3D>("flashlight");
+		Vector2 mouse_pos = GetViewport().GetMousePosition();
 
 		if(Input.IsActionPressed("ADS")){
 			Vector2 player_pos = camera.UnprojectPosition(Position);
-			Vector2 mouse_pos = GetViewport().GetMousePosition();
 			velocity.X = velocity.X*0.666f;
 			velocity.Z = velocity.Z*0.666f;
 			playerRotation = this.Rotation.Y + Mathf.Atan2(player_pos.Y - mouse_pos.Y, mouse_pos.X - player_pos.X) + Mathf.Pi / 2; // this shit is fucked dont change
 
 		}else{
 			if (velocity != Vector3.Zero){
-				playerRotation =  new Vector2(-velocity.X,velocity.Z).Angle() - Mathf.Pi/2;
+				playerRotation = new Vector2(-velocity.X,velocity.Z).Angle() - Mathf.Pi/2;
 			}
 		}
-
-		Vector2 mouse_position = GetViewport().GetMousePosition() - GetViewport().GetVisibleRect().Size/2;
+		
+		Vector2 mouse_position = mouse_pos - GetViewport().GetVisibleRect().Size/2;
 
 		if(Input.IsActionJustPressed("drag")){
-			mouseStart = mouse_position.X;
-		}else if(Input.IsActionPressed("drag") && mouseStart != mouse_position.X){
+			mouse_start = mouse_position.X;
+		}else if(Input.IsActionPressed("drag") && mouse_start != mouse_position.X){
 			Vector3 rot = this.Rotation;
-			float mouse = (mouse_position.X - mouseStart)/300;
-
-			rot.Y -= mouse;
+			rot.Y -= (mouse_position.X - mouse_start) / sensitivity;
 			this.Rotation = rot;
-			mouseStart = mouse_position.X;
+			mouse_start = mouse_position.X;
 		}
-		Vector3 pinate = new Vector3(0,MathF.PI/2 + 1.5708f,0);
+		
 		Vector3 rotation = model.GlobalRotation;
-		rotation.Y = (float)Mathf.LerpAngle(rotation.Y,playerRotation,0.2);
+		rotation.Y = (float)Mathf.LerpAngle(rotation.Y, playerRotation, 0.2);
 		model.GlobalRotation = rotation;
-        light.GlobalRotation = rotation - pinate;
+		light.GlobalRotation = rotation - new Vector3(0, MathF.PI, 0);
 		
 	}
 	

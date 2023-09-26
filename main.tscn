@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Code/Zoom.cs" id="2_y83xq"]
 [ext_resource type="Shader" path="res://Shader/pixelate.gdshader" id="3_qnmdo"]
 [ext_resource type="PackedScene" uid="uid://clv0fpjyjqnwe" path="res://light_cycle.tscn" id="3_y2xl1"]
-[ext_resource type="Texture2D" uid="uid://bwpobp2tc0y7b" path="res://Shader/collorpallette.png" id="8_gvj7y"]
+[ext_resource type="Texture2D" uid="uid://bwpobp2tc0y7b" path="res://Shader/colorpalette.png" id="8_mtddb"]
 [ext_resource type="PackedScene" uid="uid://bgqxkswqedfyc" path="res://Assets/UI/ui.tscn" id="8_wbxfp"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_h1on1"]
@@ -17,7 +17,7 @@ shader = ExtResource("3_qnmdo")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_plycb"]
 shader = ExtResource("1_mpn0j")
-shader_parameter/palette = ExtResource("8_gvj7y")
+shader_parameter/palette = ExtResource("8_mtddb")
 
 [node name="Main" type="Node3D"]
 
@@ -43,9 +43,9 @@ surface_material_override/0 = SubResource("ShaderMaterial_pmr64")
 
 [node name="World" parent="." instance=ExtResource("2_ap4xl")]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="PaletteLimiter" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="PaletteLimiter"]
 material = SubResource("ShaderMaterial_plycb")
 anchors_preset = 15
 anchor_right = 1.0
