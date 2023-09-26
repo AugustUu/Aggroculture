@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://bmy8kyut5tyc1" path="res://player.tscn" id="1_jbw82"]
 [ext_resource type="Shader" path="res://Shader/colorLimiter.gdshader" id="1_mpn0j"]
-[ext_resource type="Texture2D" uid="uid://bwpobp2tc0y7b" path="res://Shader/resurrect-64-1x.png" id="2_21twf"]
 [ext_resource type="PackedScene" uid="uid://ctqauwaeyxkgb" path="res://world.tscn" id="2_ap4xl"]
 [ext_resource type="Script" path="res://Code/Zoom.cs" id="2_y83xq"]
 [ext_resource type="Shader" path="res://Shader/pixelate.gdshader" id="3_qnmdo"]
 [ext_resource type="PackedScene" uid="uid://clv0fpjyjqnwe" path="res://light_cycle.tscn" id="3_y2xl1"]
+[ext_resource type="Texture2D" uid="uid://bwpobp2tc0y7b" path="res://Shader/collorpallette.png" id="8_gvj7y"]
 [ext_resource type="PackedScene" uid="uid://bgqxkswqedfyc" path="res://Assets/UI/ui.tscn" id="8_wbxfp"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_h1on1"]
@@ -17,7 +17,7 @@ shader = ExtResource("3_qnmdo")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_plycb"]
 shader = ExtResource("1_mpn0j")
-shader_parameter/palette = ExtResource("2_21twf")
+shader_parameter/palette = ExtResource("8_gvj7y")
 
 [node name="Main" type="Node3D"]
 
@@ -27,6 +27,7 @@ camera = NodePath("Camera3D")
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.422618, 0.906308, 0, -0.906308, 0.422618, 0, 6.5, 3)
+current = true
 fov = 90.0
 size = 10.0
 script = ExtResource("2_y83xq")

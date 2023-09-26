@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bwpobp2tc0y7b"
-path="res://.godot/imported/resurrect-64-1x.png-8751bf32b17deb4709d5bc34f4e24d69.ctex"
+path="res://.godot/imported/collorpallette.png-36e6cb7a2541abe18e6e5fbd75134247.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Shader/resurrect-64-1x.png"
-dest_files=["res://.godot/imported/resurrect-64-1x.png-8751bf32b17deb4709d5bc34f4e24d69.ctex"]
+source_file="res://Shader/collorpallette.png"
+dest_files=["res://.godot/imported/collorpallette.png-36e6cb7a2541abe18e6e5fbd75134247.ctex"]
 
 [params]
 
