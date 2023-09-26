@@ -41,7 +41,7 @@ environment = SubResource("Environment_1hj64")
 [node name="TimeDay Counter" type="Timer" parent="." node_paths=PackedStringArray("sun")]
 autostart = true
 script = ExtResource("1_w6wi8")
-hours = 23
+hours = 10
 sun = NodePath("SunHolder")
 
 [node name="Time" type="Label" parent="TimeDay Counter"]
