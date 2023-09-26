@@ -17,7 +17,7 @@ config/icon="res://Assets/icon.svg"
 
 [display]
 
-window/stretch/mode="viewport"
+window/size/viewport_width=1920
 
 [dotnet]
 
