@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmy8kyut5tyc1"]
+[gd_scene load_steps=5 format=3 uid="uid://bmy8kyut5tyc1"]
 
 [ext_resource type="Script" path="res://Code/movement.cs" id="1_kpbel"]
 [ext_resource type="PackedScene" uid="uid://c3toyfsqrxbh2" path="res://Assets/DebugMan/testMan.glb" id="2_l6brp"]
+[ext_resource type="Script" path="res://Code/flashlight.cs" id="3_nu5u2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8td1h"]
 radius = 0.222466
@@ -24,14 +25,14 @@ bones/29/scale = Vector3(1.00048, 1.00048, 1.00048)
 
 [node name="flashlight" type="SpotLight3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.245958, 0.0498967)
-light_color = Color(1, 1, 0.803922, 1)
 light_energy = 9.0
 shadow_enabled = true
 spot_range = 76.9807
 spot_angle = 40.0604
+script = ExtResource("3_nu5u2")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.74999, 0)
+[node name="ambientlight" type="OmniLight3D" parent="flashlight"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.36211e-09, 0.504032, 0.0498967)
 omni_range = 3.5
 
 [editable path="testMan"]

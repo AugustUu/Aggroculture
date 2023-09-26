@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://clv0fpjyjqnwe"]
 
 [ext_resource type="Script" path="res://Code/dayTime.cs" id="1_w6wi8"]
-[ext_resource type="FontFile" uid="uid://bk7gwctcngnki" path="res://Assets/UI/chaos-engine-upgrade-store.ttf" id="2_bib04"]
+[ext_resource type="FontFile" uid="uid://bv4aus15hgsj5" path="res://Assets/UI/Seven Segment.ttf" id="2_ypcm3"]
 
 [sub_resource type="Gradient" id="Gradient_ccplx"]
 colors = PackedColorArray(0.0745098, 0.0588235, 0.360784, 1, 0.00392157, 0.00392157, 0.00784314, 1)
@@ -22,13 +22,15 @@ background_mode = 2
 sky = SubResource("Sky_f6l3f")
 
 [sub_resource type="LabelSettings" id="LabelSettings_74ur1"]
-font = ExtResource("2_bib04")
+font = ExtResource("2_ypcm3")
+font_size = 29
 font_color = Color(0.501961, 0.501961, 0.501961, 1)
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_txodx"]
-font = ExtResource("2_bib04")
+font = ExtResource("2_ypcm3")
+font_size = 27
 font_color = Color(0.501961, 0.501961, 0.501961, 1)
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
@@ -45,18 +47,18 @@ hours = 10
 sun = NodePath("SunHolder")
 
 [node name="Time" type="Label" parent="TimeDay Counter"]
-offset_left = 29.0
-offset_top = 998.0
-offset_right = 69.0
-offset_bottom = 1021.0
+offset_left = 26.0
+offset_top = 1021.0
+offset_right = 92.0
+offset_bottom = 1056.0
 label_settings = SubResource("LabelSettings_74ur1")
 metadata/_edit_use_anchors_ = true
 
 [node name="Days" type="Label" parent="TimeDay Counter"]
 offset_left = 29.0
-offset_top = 1025.0
-offset_right = 69.0
-offset_bottom = 1048.0
+offset_top = 992.0
+offset_right = 89.0
+offset_bottom = 1027.0
 label_settings = SubResource("LabelSettings_txodx")
 metadata/_edit_use_anchors_ = true
 

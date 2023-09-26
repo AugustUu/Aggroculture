@@ -21,6 +21,8 @@ shader_parameter/palette = ExtResource("8_gvj7y")
 
 [node name="Main" type="Node3D"]
 
+[node name="UI" parent="." instance=ExtResource("8_wbxfp")]
+
 [node name="Player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("1_jbw82")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.47477, 0)
 camera = NodePath("Camera3D")
@@ -40,8 +42,6 @@ surface_material_override/0 = SubResource("ShaderMaterial_pmr64")
 [node name="LightCycle" parent="." instance=ExtResource("3_y2xl1")]
 
 [node name="World" parent="." instance=ExtResource("2_ap4xl")]
-
-[node name="UI" parent="." instance=ExtResource("8_wbxfp")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
