@@ -21,14 +21,12 @@ shader_parameter/palette = ExtResource("8_mtddb")
 
 [node name="Main" type="Node3D"]
 
-[node name="UI" parent="." instance=ExtResource("8_wbxfp")]
-
 [node name="Player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("1_jbw82")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.47477, 0)
 camera = NodePath("Camera3D")
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 0.422618, 0.906308, 0, -0.906308, 0.422618, 0, 6.5, 3)
+transform = Transform3D(1, 0, 0, 0, 0.422618, 0.906308, 0, -0.906308, 0.422618, 0, 45.8376, 3)
 current = true
 fov = 90.0
 size = 10.0
@@ -54,3 +52,8 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("8_wbxfp")]
