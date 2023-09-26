@@ -42,6 +42,8 @@ public partial class movement : CharacterBody3D
 	*/
 
 	public void Rotate(Vector3 velocity){
+		SpotLight3D light = GetNode<SpotLight3D>("flashlight");
+
 		if(Input.IsActionPressed("ADS")){
 			Vector2 player_pos = camera.UnprojectPosition(Position);
 			Vector2 mouse_pos = GetViewport().GetMousePosition();
@@ -67,10 +69,12 @@ public partial class movement : CharacterBody3D
 			this.Rotation = rot;
 			mouseStart = mouse_position.X;
 		}
-
+		Vector3 pinate = new Vector3(0,MathF.PI/2 + 1.5708f,0);
 		Vector3 rotation = model.GlobalRotation;
 		rotation.Y = (float)Mathf.LerpAngle(rotation.Y,playerRotation,0.2);
 		model.GlobalRotation = rotation;
+        light.GlobalRotation = rotation - pinate;
+		
 	}
 	
 	public override void _PhysicsProcess(double delta)

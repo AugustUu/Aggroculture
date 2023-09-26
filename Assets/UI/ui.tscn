@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgqxkswqedfyc"]
+
+[ext_resource type="Texture2D" uid="uid://b1svi6j1gytyk" path="res://Assets/UI/singleslot2.png" id="1_8epcp"]
+
+[node name="UI" type="Node2D"]
+
+[node name="SingleSlot3" type="Sprite2D" parent="."]
+position = Vector2(152, 1019)
+scale = Vector2(4, 4)
+texture = ExtResource("1_8epcp")
+
+[node name="Singleslot2" type="Sprite2D" parent="."]
+position = Vector2(220, 1019)
+scale = Vector2(4, 4)
+texture = ExtResource("1_8epcp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(288, 1019)
+scale = Vector2(4, 4)
+texture = ExtResource("1_8epcp")

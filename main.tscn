@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dwcmh42tlyclw"]
+[gd_scene load_steps=12 format=3 uid="uid://dwcmh42tlyclw"]
 
 [ext_resource type="PackedScene" uid="uid://bmy8kyut5tyc1" path="res://player.tscn" id="1_jbw82"]
 [ext_resource type="Shader" path="res://Shader/colorLimiter.gdshader" id="1_mpn0j"]
@@ -7,6 +7,7 @@
 [ext_resource type="Shader" path="res://Shader/pixelate.gdshader" id="3_qnmdo"]
 [ext_resource type="PackedScene" uid="uid://clv0fpjyjqnwe" path="res://light_cycle.tscn" id="3_y2xl1"]
 [ext_resource type="Texture2D" uid="uid://cvdimgxi2s38w" path="res://Assets/icon.svg" id="7_77xwn"]
+[ext_resource type="PackedScene" uid="uid://bgqxkswqedfyc" path="res://Assets/UI/ui.tscn" id="8_wbxfp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i80ga"]
 shader = ExtResource("1_mpn0j")
@@ -87,3 +88,5 @@ surface_material_override/0 = SubResource("ShaderMaterial_pmr64")
 [node name="LightCycle" parent="." instance=ExtResource("3_y2xl1")]
 
 [node name="World" parent="." instance=ExtResource("2_ap4xl")]
+
+[node name="UI" parent="." instance=ExtResource("8_wbxfp")]
