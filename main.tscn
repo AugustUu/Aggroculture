@@ -26,7 +26,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.47477, 0)
 camera = NodePath("Camera3D")
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 0.422618, 0.906308, 0, -0.906308, 0.422618, 0, 45.8376, 3)
+transform = Transform3D(1, 0, 0, 0, 0.422618, 0.906308, 0, -0.906308, 0.422618, 0, 57.9966, 3)
 current = true
 fov = 90.0
 size = 10.0
@@ -34,6 +34,7 @@ script = ExtResource("2_y83xq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player/Camera3D"]
 transform = Transform3D(6.47, 0, 0, 0, -0.0711012, -4.30825, 0, 2.49399, -0.122824, 0, 0.0138834, -1.06323)
+visible = false
 mesh = SubResource("PlaneMesh_h1on1")
 surface_material_override/0 = SubResource("ShaderMaterial_pmr64")
 
@@ -42,8 +43,10 @@ surface_material_override/0 = SubResource("ShaderMaterial_pmr64")
 [node name="World" parent="." instance=ExtResource("2_ap4xl")]
 
 [node name="PaletteLimiter" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="PaletteLimiter"]
+visible = false
 material = SubResource("ShaderMaterial_plycb")
 anchors_preset = 15
 anchor_right = 1.0
@@ -55,5 +58,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 4
+visible = false
 
 [node name="UI" parent="CanvasLayer" instance=ExtResource("8_wbxfp")]
+visible = false
