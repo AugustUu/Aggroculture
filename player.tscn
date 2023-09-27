@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmy8kyut5tyc1"]
+[gd_scene load_steps=6 format=3 uid="uid://bmy8kyut5tyc1"]
 
 [ext_resource type="Script" path="res://Code/movement.cs" id="1_kpbel"]
 [ext_resource type="PackedScene" uid="uid://c3toyfsqrxbh2" path="res://Assets/DebugMan/testMan.glb" id="2_l6brp"]
@@ -7,6 +7,9 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8td1h"]
 radius = 0.222466
 height = 1.42374
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_wwxyl"]
+albedo_color = Color(0.294118, 0.294118, 0.294118, 1)
 
 [node name="player" type="CharacterBody3D" node_paths=PackedStringArray("model")]
 script = ExtResource("1_kpbel")
@@ -22,6 +25,9 @@ shape = SubResource("CapsuleShape3D_8td1h")
 bones/29/position = Vector3(0.000474975, 0.000474975, 0.000474975)
 bones/29/rotation = Quaternion(0.000474975, 0.000474975, -1.38353, 0.996475)
 bones/29/scale = Vector3(1.00048, 1.00048, 1.00048)
+
+[node name="Cube" parent="testMan/Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("ORMMaterial3D_wwxyl")
 
 [node name="flashlight" type="SpotLight3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.87848, 0.0498967)
