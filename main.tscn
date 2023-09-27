@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://rykra52daxp0"]
+[gd_scene load_steps=13 format=3 uid="uid://rykra52daxp0"]
 
 [ext_resource type="PackedScene" uid="uid://bmy8kyut5tyc1" path="res://player.tscn" id="1_jbw82"]
 [ext_resource type="Shader" path="res://Shader/colorLimiter.gdshader" id="1_mpn0j"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://clv0fpjyjqnwe" path="res://light_cycle.tscn" id="3_y2xl1"]
 [ext_resource type="Texture2D" uid="uid://bwpobp2tc0y7b" path="res://Shader/colorpalette.png" id="8_mtddb"]
 [ext_resource type="PackedScene" uid="uid://bqpiknc4llpfk" path="res://Assets/UI/ui.tscn" id="8_wbxfp"]
+[ext_resource type="PackedScene" uid="uid://47ip2xbed338" path="res://Assets/DebugTree/test.glb" id="10_25k5i"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_h1on1"]
 
@@ -26,7 +27,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.47477, 0)
 camera = NodePath("Camera3D")
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 0.422618, 0.906308, 0, -0.906308, 0.422618, 0, 57.9966, 3)
+transform = Transform3D(1, 0, 0, 0, 0.422618, 0.906308, 0, -0.906308, 0.422618, 0, 8, 3)
 current = true
 fov = 90.0
 size = 10.0
@@ -34,7 +35,6 @@ script = ExtResource("2_y83xq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player/Camera3D"]
 transform = Transform3D(6.47, 0, 0, 0, -0.0711012, -4.30825, 0, 2.49399, -0.122824, 0, 0.0138834, -1.06323)
-visible = false
 mesh = SubResource("PlaneMesh_h1on1")
 surface_material_override/0 = SubResource("ShaderMaterial_pmr64")
 
@@ -43,10 +43,8 @@ surface_material_override/0 = SubResource("ShaderMaterial_pmr64")
 [node name="World" parent="." instance=ExtResource("2_ap4xl")]
 
 [node name="PaletteLimiter" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="PaletteLimiter"]
-visible = false
 material = SubResource("ShaderMaterial_plycb")
 anchors_preset = 15
 anchor_right = 1.0
@@ -56,9 +54,13 @@ grow_vertical = 2
 color = Color(1, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UiLayer" type="CanvasLayer" parent="."]
 layer = 4
-visible = false
 
-[node name="UI" parent="CanvasLayer" instance=ExtResource("8_wbxfp")]
-visible = false
+[node name="UI" parent="UiLayer" instance=ExtResource("8_wbxfp")]
+
+[node name="test2" parent="." instance=ExtResource("10_25k5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4547, 0, 3.47249)
+
+[node name="test3" parent="." instance=ExtResource("10_25k5i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.92581, 0, -2.04586)

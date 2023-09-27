@@ -24,7 +24,7 @@ bones/29/rotation = Quaternion(0.000474975, 0.000474975, -1.38353, 0.996475)
 bones/29/scale = Vector3(1.00048, 1.00048, 1.00048)
 
 [node name="flashlight" type="SpotLight3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.245958, 0.0498967)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.87848, 0.0498967)
 light_energy = 9.0
 shadow_enabled = true
 spot_range = 76.9807

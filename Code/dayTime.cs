@@ -7,7 +7,7 @@ public partial class dayTime : Timer
 	public static int minutes = 0;
 	
 	[Export]
-	public static int hours = 5;
+	public static int hours = 10;
 
 	public static int days = 0;
 	Vector3 rotX = new Vector3(0,0,0);

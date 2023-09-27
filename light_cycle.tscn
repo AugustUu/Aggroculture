@@ -28,10 +28,6 @@ environment = SubResource("Environment_1hj64")
 [node name="TimeDay Counter" type="Timer" parent="." node_paths=PackedStringArray("sun")]
 autostart = true
 script = ExtResource("1_w6wi8")
-<<<<<<< Updated upstream
-hours = 10
-=======
->>>>>>> Stashed changes
 sun = NodePath("SunHolder")
 
 [node name="SunHolder" type="Node3D" parent="TimeDay Counter"]

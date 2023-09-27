@@ -8,7 +8,7 @@ public partial class worldGen : Node3D
 
         FastNoiseLite noise = new();
         noise.FractalOctaves = 6;
-        noise.NoiseType = FastNoiseLite.NoiseTypeEnum.Perlin;
+        noise.NoiseType = FastNoiseLite.NoiseTypeEnum.SimplexSmooth;
 
         MeshInstance3D test = GetNode<MeshInstance3D>("worldMesh");
         PlaneMesh plane = (PlaneMesh)test.Mesh;
@@ -27,7 +27,7 @@ public partial class worldGen : Node3D
 
         for(int i=0; i<mesh_data_tool.GetVertexCount(); i++){
             Vector3 vertex = mesh_data_tool.GetVertex(i);
-            vertex.Y = noise.GetNoise3D(vertex.X,vertex.Y, vertex.Z)*60;
+            vertex.Y = noise.GetNoise3D(vertex.X,vertex.Y, vertex.Z)*20;
             mesh_data_tool.SetVertex(i,vertex);
         }
 
