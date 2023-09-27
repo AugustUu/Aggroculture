@@ -4,10 +4,10 @@ using Godot;
 public partial class dayTime : Timer
 {
 	[Export]
-	public int minutes = 0;
+	public static int minutes = 0;
 	
 	[Export]
-	public int hours = 5;
+	public static int hours = 5;
 
 	public static int days = 0;
 	Vector3 rotX = new Vector3(0,0,0);
@@ -53,14 +53,5 @@ public partial class dayTime : Timer
 			hours = 0;
 			days += 1;
 		}
-		//setting labels to show coresponding data.
-		Label onScreenTime = GetNode<Label>("Time");
-		Label onScreenDays = GetNode<Label>("Days");
-		if(minutes >= 10){
-			onScreenTime.Text = hours.ToString()+" : "+minutes.ToString();
-		}else{
-			onScreenTime.Text = hours.ToString()+" : 0"+minutes.ToString();
-		}
-		onScreenDays.Text = "Day "+days;
 	}
 }

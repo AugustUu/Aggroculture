@@ -11,6 +11,10 @@ public partial class clock : Label
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		//this.Text =
+		if(dayTime.minutes >= 10){
+			this.Text = dayTime.hours+" : "+dayTime.minutes;
+		}else{
+			this.Text = dayTime.hours+" : 0"+dayTime.minutes;
+		}
 	}
 }
