@@ -1,13 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://bqpiknc4llpfk"]
+[gd_scene load_steps=12 format=3 uid="uid://bqpiknc4llpfk"]
 
+[ext_resource type="Script" path="res://Code/inventory.cs" id="1_01mli"]
 [ext_resource type="Texture2D" uid="uid://b1svi6j1gytyk" path="res://Assets/UI/singleslot2.png" id="1_8epcp"]
 [ext_resource type="FontFile" uid="uid://cokvtgr0yrpy0" path="res://Assets/UI/PixeloidMono-d94EV.ttf" id="2_fux83"]
 [ext_resource type="FontFile" uid="uid://bv4aus15hgsj5" path="res://Assets/UI/Seven Segment.ttf" id="2_rloee"]
 [ext_resource type="Texture2D" uid="uid://dw7q65fuvvi5b" path="res://Assets/UI/cornercheck.png" id="2_wmc5q"]
 [ext_resource type="Texture2D" uid="uid://cu65fcktamq6i" path="res://Assets/UI/checkup.png" id="3_0fdgx"]
-[ext_resource type="Script" path="res://Assets/UI/clock.cs" id="3_nevi7"]
 [ext_resource type="Texture2D" uid="uid://b0ewcaw66llu2" path="res://Assets/UI/invenback.png" id="4_6hj85"]
 [ext_resource type="Texture2D" uid="uid://bsme11pxablht" path="res://Assets/UI/cehckright.png" id="4_7mo7j"]
+[ext_resource type="Script" path="res://Code/clock.cs" id="9_rav1c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tqnt8"]
 font = ExtResource("2_fux83")
@@ -37,6 +38,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_01mli")
 
 [node name="TextureRect" type="TextureRect" parent="Inventory"]
 layout_mode = 0
@@ -165,4 +167,4 @@ text = ":TIME:"
 label_settings = SubResource("LabelSettings_dedgu")
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("3_nevi7")
+script = ExtResource("9_rav1c")
