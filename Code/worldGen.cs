@@ -27,7 +27,7 @@ public partial class worldGen : Node3D
 
         for(int i=0; i<mesh_data_tool.GetVertexCount(); i++){
             Vector3 vertex = mesh_data_tool.GetVertex(i);
-            vertex.Y = noise.GetNoise3D(vertex.X,vertex.Y, vertex.Z)*20;
+            vertex.Y = noise.GetNoise3D(vertex.X,vertex.Y, vertex.Z)*3;
             mesh_data_tool.SetVertex(i,vertex);
         }
 

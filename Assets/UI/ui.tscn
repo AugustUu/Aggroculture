@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bqpiknc4llpfk"]
+[gd_scene load_steps=13 format=3 uid="uid://bqpiknc4llpfk"]
 
 [ext_resource type="Script" path="res://Code/inventory.cs" id="1_01mli"]
 [ext_resource type="Texture2D" uid="uid://b1svi6j1gytyk" path="res://Assets/UI/singleslot2.png" id="1_8epcp"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b0ewcaw66llu2" path="res://Assets/UI/invenback.png" id="4_6hj85"]
 [ext_resource type="Texture2D" uid="uid://bsme11pxablht" path="res://Assets/UI/cehckright.png" id="4_7mo7j"]
 [ext_resource type="Script" path="res://Code/clock.cs" id="9_rav1c"]
+[ext_resource type="Script" path="res://Code/status.cs" id="10_b1yqu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tqnt8"]
 font = ExtResource("2_fux83")
@@ -129,13 +130,11 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
 offset_top = 5.0
-offset_right = -1.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 13
+theme_override_constants/margin_left = 14
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
@@ -168,3 +167,19 @@ label_settings = SubResource("LabelSettings_dedgu")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("9_rav1c")
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -340.0
+offset_top = -42.0
+offset_right = -286.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "hunbfr"
+script = ExtResource("10_b1yqu")

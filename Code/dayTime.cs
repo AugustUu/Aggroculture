@@ -28,6 +28,7 @@ public partial class dayTime : Timer
 
 		minutes += 5;
 		recalculate_time();
+		status.hunger -= 1;
 
 	}
 
